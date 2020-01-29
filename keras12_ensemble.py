@@ -29,7 +29,7 @@ x1_train, x1_validation, x2_train, x2_validation, y1_train, y1_validataion=train
 
 
 from keras.models import Sequential, Model
-from keras.layers import Dense, Input
+from keras.layers import Dense, Input, Concatenate
 from keras.layers.merge import concatenate
 #model=Sequential()
 
@@ -48,6 +48,7 @@ dense23=Dense(3)(dense22)
 output2=Dense(5)(dense23)
 
 merge1=concatenate([output1, output2])
+# merge1=Concatenate()([output1, output2])
 
 middle1=Dense(4)(merge1)
 middle2=Dense(7)(middle1)
