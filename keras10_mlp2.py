@@ -30,7 +30,7 @@ print("x_test", x_test)
 
 
 from keras.models import Sequential
-from keras.layers import Dense
+from keras.layers import Dense  
 model=Sequential()
 
 model.add(Dense(8, input_shape=(3,)))
