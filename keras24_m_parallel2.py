@@ -54,7 +54,8 @@ x = x.reshape(x.shape[0], 3, 3)
 
 print(x)
 print(x.shape)
-
+print(y)
+print(y.shape)
 
 
 x_train = x[:6]
@@ -77,24 +78,24 @@ model.add(Dense(3))
 model.summary()
 
 
-model.compile(loss='mse', optimizer='adam', metrics=['mse', 'accuracy'])
-tb_hist=TensorBoard(log_dir='./graph', histogram_freq=0, write_graph=True, write_images=True)
+# model.compile(loss='mse', optimizer='adam', metrics=['mse', 'accuracy'])
+# tb_hist=TensorBoard(log_dir='./graph', histogram_freq=0, write_graph=True, write_images=True)
 
-model.fit(x_train, y_train, epochs=100, batch_size=1, verbose=1, callbacks=[tb_hist])
-
-
-loss, mse, acc=model.evaluate(x_test, y_test, batch_size=1)
+# model.fit(x_train, y_train, epochs=100, batch_size=1, verbose=1, callbacks=[tb_hist])
 
 
-print('loss : ', loss)
-print('mse : ', mse)
-print('acc : ', acc)
+# loss, mse, acc=model.evaluate(x_test, y_test, batch_size=1)
 
 
-x_pre=array([[90, 95, 105], [100, 105, 115], [110, 115, 125]])
+# print('loss : ', loss)
+# print('mse : ', mse)
+# print('acc : ', acc)
 
-x_pre=x_pre.reshape(1, 3, 3)
 
-y_pre=model.predict(x_pre)
+# x_pre=array([[90, 95, 105], [100, 105, 115], [110, 115, 125]])
 
-print(y_pre)
+# x_pre=x_pre.reshape(1, 3, 3)
+
+# y_pre=model.predict(x_pre)
+
+# print(y_pre)

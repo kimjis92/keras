@@ -56,8 +56,8 @@ x = x.reshape(8, 6)
 
 print(x)
 print(x.shape)
-
-
+print(y)
+print(y.shape)
 
 x_train = x[:6]
 x_test = x[6:]
@@ -69,36 +69,36 @@ print(in_seq1)
 
 
 
-model=Sequential()
-model.add(Dense(64, activation='relu', input_shape=(6,)))
-model.add(Dense(16, activation='relu'))
-model.add(Dense(8, activation='relu'))
-model.add(Dense(4, activation='relu'))
-model.add(Dense(1))
+# model=Sequential()
+# model.add(Dense(64, activation='relu', input_shape=(6,)))
+# model.add(Dense(16, activation='relu'))
+# model.add(Dense(8, activation='relu'))
+# model.add(Dense(4, activation='relu'))
+# model.add(Dense(1))
 
-model.summary()
-
-
-model.compile(loss='mse', optimizer='adam', metrics=['mse', 'accuracy'])
-tb_hist=TensorBoard(log_dir='./graph', histogram_freq=0, write_graph=True, write_images=True)
-
-model.fit(x_train, y_train, epochs=100, batch_size=1, verbose=1, callbacks=[tb_hist])
+# model.summary()
 
 
-loss, mse, acc=model.evaluate(x_test, y_test, batch_size=1)
+# model.compile(loss='mse', optimizer='adam', metrics=['mse', 'accuracy'])
+# tb_hist=TensorBoard(log_dir='./graph', histogram_freq=0, write_graph=True, write_images=True)
+
+# model.fit(x_train, y_train, epochs=100, batch_size=1, verbose=1, callbacks=[tb_hist])
 
 
-print('loss : ', loss)
-print('mse : ', mse)
-print('acc : ', acc)
+# loss, mse, acc=model.evaluate(x_test, y_test, batch_size=1)
 
-x_pre=array([[90, 95], [100, 105], [110, 115]])
 
-x_pre=x_pre.reshape(1,6)
+# print('loss : ', loss)
+# print('mse : ', mse)
+# print('acc : ', acc)
 
-y_pre=model.predict(x_pre)
+# x_pre=array([[90, 95], [100, 105], [110, 115]])
 
-print(y_pre)
+# x_pre=x_pre.reshape(1,6)
+
+# y_pre=model.predict(x_pre)
+
+# print(y_pre)
 
 
 
