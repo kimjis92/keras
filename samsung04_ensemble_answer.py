@@ -163,7 +163,7 @@ print('mse : ', eva[1])
 y_pred = model.predict([x1_test_scaled, x2_test_scaled])
 
 for i in range(5):
-    print('종가 : ', y1_test[i], '/ 예측가 : ', y1_pred[i])
+    print('종가 : ', y1_test[i], '/ 예측가 : ', y_pred[i])
 
 from sklearn.metrics import mean_squared_error
 def RMSE(y_test, y_predict):
