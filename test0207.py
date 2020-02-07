@@ -1,5 +1,5 @@
 
-
+## 예측값 62414.633
 
 import pandas as pd
 import numpy as np
